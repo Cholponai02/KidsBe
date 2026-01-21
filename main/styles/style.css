@@ -1,92 +1,81 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Чтобы padding не раздувал ширину блоков */
+    box-sizing: border-box;
 }
 
-/* Общий ограничитель ширины для всех секций */
-.wrapper, 
-.container, 
-.zero {
+.wrapper {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Хедер */
-.hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
+.one {
+    margin: 30px 60px;
+}
+
+.zakaz {
+    padding: 15px;
+    margin: 0 0 0 20px;
+    background-color: #2DBC7C;
+    color: rgb(210, 240, 240);
+    border-radius: 15px 15px 25px 30px;
     font-family: sans-serif;
+    border-style: none;
+    font-size: 130%;
+}
+
+hr {
+    color: #F5F4FF;
+    height: 1px;
+}
+
+.hero-container {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-weight: 400;
 }
 
 .header-left, .header-right {
     display: flex;
     align-items: center;
-    gap: 20px;
 }
 
-.logo-img {
-    height: 50px;
-}
 
-.nav-menu {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+ul li {
     list-style: none;
+    display: inline-block;
+    margin: 0 50px;
+}
+ul li a {
+   box-sizing: border-box;
+   text-align: center;
+   text-decoration: none;
+   font-family: sans-serif;
+   font-weight: 400;
 }
 
-.nav-menu li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    font-family: sans-serif;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid #F5F4FF;
-}
-
-/* Кнопка "Заказать звонок" */
-.zakaz {
-    padding: 12px 25px;
-    background-color: #2DBC7C;
-    color: white;
-    border-radius: 20px;
-    font-family: sans-serif;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Главный блок (голубой фон) */
 .box1 {
     background-color: #f5f4ff;
-    padding: 60px 0;
 }
 
-.container {
+.container{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 40px;
+    
 }
 
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     font-size: 3em;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.book {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 30px;
-    line-height: 1.5;
 }
 
 .boygirl {
@@ -94,21 +83,24 @@ h1 {
     display: block;
 }
 
-/* Кнопка с номером телефона */
+.book {
+    margin: 20px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+}
+
 .special-button {
+    border-radius: 10px 45px 10px 45px;
     display: inline-grid;
     grid-template-columns: auto auto;
-    border: none;
-    background: white;
-    border-radius: 10px 45px 10px 45px;
-    overflow: hidden;
-    cursor: pointer;
+    border-style: none;
 }
-/* Эффект при клике: меняем фон внутренних блоков */
-.special-button:active .number-special-button {
+
+.special-button:active {
     background-color: #2DBC7C;
     color: white;
 }
+
 .number-special-button {
     background-color: #E8E5FB;
     padding: 15px 25px;
@@ -120,13 +112,13 @@ h1 {
 
 .color-special-button {
     background-color: #5B45FF;
-    padding: 15px 30px;
-    color: white;
+    padding: 20px 30px;
+    border-radius: 10px 45px 10px 45px;
+    color: #f5f4ff;
     display: flex;
     align-items: center;
 }
 
-/* Блок с карточками преимуществ */
 .zero {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -135,11 +127,23 @@ h1 {
 }
 
 .one {
+    margin: 15px 25px;
+    padding: 15px 25px;
+    background-color: white;
+    border-radius: 20px;
+    border-color: #2DBC7C;
+    border-style: none;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+
+.one {
     background-color: white;
     padding: 15px 25px;
     border-radius: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
@@ -152,4 +156,47 @@ h1 {
 .one p {
     font-family: sans-serif;
     font-size: 14px;
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 768px) and (max-width:1199px) {
+    .wrapper {
+        grid-template-columns: 2fr;
+    }
+
+    .hero-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .left-container, .right-container {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .h1 {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .zero {  
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+} 
+
+
+@media (min-width: 375px) and (max-width:768px) {
+ 
 }
